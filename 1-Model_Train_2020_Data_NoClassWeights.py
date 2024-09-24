@@ -46,6 +46,13 @@ data_path = '../data'
 # df_2022 = pd.read_csv(f"{data_path}/2022/heart_2022_with_nans.csv")
 df_2020 = pd.read_csv(f"{data_path}/2020/heart_2020_cleaned.csv")
 
+saved_dir = './saved_models_2020_noclassweights'
+saved_figs = './figs_2020_noclassweights/'
+if not os.path.exists(saved_dir):
+    os.makedirs(saved_dir)
+if not os.path.exists(saved_figs):
+    os.makedirs(saved_figs)
+    
 # Convert categorical to numeric
 le = LabelEncoder()
 for column in df_2020.select_dtypes(include=['object']).columns:
@@ -63,16 +70,16 @@ print("y train", y_train.shape)
 print("y test", y_test.shape)
 
 # PyTorch Dataset
-class HeartDiseaseDataset(Dataset):
-    def __init__(self, X, y):
-        self.X = torch.tensor(X, dtype=torch.float32)
-        self.y = torch.tensor(y, dtype=torch.float32)
+# class HeartDiseaseDataset(Dataset):
+#     def __init__(self, X, y):
+#         self.X = torch.tensor(X, dtype=torch.float32)
+#         self.y = torch.tensor(y, dtype=torch.float32)
 
-    def __len__(self):
-        return len(self.y)
+#     def __len__(self):
+#         return len(self.y)
 
-    def __getitem__(self, idx):
-        return self.X[idx], self.y[idx]
+#     def __getitem__(self, idx):
+#         return self.X[idx], self.y[idx]
 
 # # PyTorch Neural Network
 # class NeuralNetwork(nn.Module):
@@ -183,7 +190,7 @@ def get_model_performance(model, param_grid, X_train, X_test, y_train, y_test):
     return cv_scores, test_scores, best_model
 
 
-def save_model(model, name, save_dir='./saved_models'):
+def save_model(model, name, save_dir=f'{saved_dir}'):
     os.makedirs(save_dir, exist_ok=True)
     # if isinstance(model, PyTorchClassifier):
     #     torch.save(model.model.state_dict(), os.path.join(save_dir, f"{name}_pytorch.pth"))
@@ -205,7 +212,7 @@ def model_evaluation(classifier, x_test, y_test):
     plt.figure(figsize=(10, 7))
     sns.heatmap(cm,annot = labels,cmap = 'Greens',fmt ='')
     plt.title(f'Confusion Matrix')
-    plt.savefig(f'./figs_2020_noclassweights/confusion_matrix_{str(classifier.__class__.__name__)}.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'{saved_figs}/confusion_matrix_{str(classifier.__class__.__name__)}.png', dpi=300, bbox_inches='tight')
 
     # Classification Report
     report = classification_report(y_test, classifier.predict(x_test))

@@ -1,0 +1,95 @@
+2024-09-24 06:19:48,449 - INFO - Calculated class weights: {0: 0.5288817589173909, 1: 9.15598250837365}
+2024-09-24 06:20:03,721 - INFO - Saved model: Logistic Regression
+2024-09-24 06:20:03,721 - INFO - Best parameters for Logistic Regression: {'C': 0.1, 'class_weight': {0: 0.5288817589173909, 1: 9.15598250837365}, 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 5000, 'multi_class': 'auto', 'n_jobs': None, 'penalty': 'l2', 'random_state': None, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}
+2024-09-24 06:20:03,721 - INFO - Cross-validation scores for Logistic Regression: {'accuracy': 0.8325348101500853, 'precision': 0.21232937328735382, 'recall': 0.7626560758384106, 'f1': 0.3321712257396171, 'auc': 0.8868136124119717}
+2024-09-24 06:20:03,721 - INFO - Test scores for Logistic Regression: {'accuracy': 0.8333299461436846, 'precision': 0.2128723182670277, 'recall': 0.7606996650539636, 'f1': 0.3326552201155505, 'auc': 0.8822836714243241}
+2024-09-24 06:20:04,391 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.84      0.90     46518
+           1       0.21      0.76      0.33      2687
+
+    accuracy                           0.83     49205
+   macro avg       0.60      0.80      0.62     49205
+weighted avg       0.94      0.83      0.87     49205
+
+2024-09-24 06:21:19,501 - INFO - Saved model: Decision Tree
+2024-09-24 06:21:19,501 - INFO - Best parameters for Decision Tree: {'ccp_alpha': 0.0, 'class_weight': {0: 0.5288817589173909, 1: 9.15598250837365}, 'criterion': 'gini', 'max_depth': 20, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+2024-09-24 06:21:19,501 - INFO - Cross-validation scores for Decision Tree: {'accuracy': 0.8700722333875225, 'precision': 0.21549625603759695, 'recall': 0.5215877585031438, 'f1': 0.3048823384452574, 'auc': 0.7036820598008304}
+2024-09-24 06:21:19,501 - INFO - Test scores for Decision Tree: {'accuracy': 0.8631033431561833, 'precision': 0.20765342960288807, 'recall': 0.5351693338295497, 'f1': 0.29920932168123177, 'auc': 0.704084378828638}
+2024-09-24 06:21:20,142 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.88      0.92     46518
+           1       0.21      0.54      0.30      2687
+
+    accuracy                           0.86     49205
+   macro avg       0.59      0.71      0.61     49205
+weighted avg       0.93      0.86      0.89     49205
+
+2024-09-24 06:46:50,025 - INFO - Saved model: Random Forest
+2024-09-24 06:46:50,025 - INFO - Best parameters for Random Forest: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': {0: 0.5288817589173909, 1: 9.15598250837365}, 'criterion': 'gini', 'max_depth': 20, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 10, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2024-09-24 06:46:50,025 - INFO - Cross-validation scores for Random Forest: {'accuracy': 0.9412042651339231, 'precision': 0.4617967779925201, 'recall': 0.4625981581481923, 'f1': 0.46214313408962215, 'auc': 0.8811678132165042}
+2024-09-24 06:46:50,026 - INFO - Test scores for Random Forest: {'accuracy': 0.9407986993191749, 'precision': 0.45887918486171764, 'recall': 0.469296613323409, 'f1': 0.4640294388224471, 'auc': 0.879213680773743}
+2024-09-24 06:46:52,823 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97     46518
+           1       0.46      0.47      0.46      2687
+
+    accuracy                           0.94     49205
+   macro avg       0.71      0.72      0.72     49205
+weighted avg       0.94      0.94      0.94     49205
+
+2024-09-24 07:37:27,893 - INFO - Saved model: Gradient Boosting
+2024-09-24 07:37:27,893 - INFO - Best parameters for Gradient Boosting: {'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.1, 'loss': 'log_loss', 'max_depth': 3, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 200, 'n_iter_no_change': None, 'random_state': None, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2024-09-24 07:37:27,893 - INFO - Cross-validation scores for Gradient Boosting: {'accuracy': 0.9493336471717756, 'precision': 0.5838856120257898, 'recall': 0.2515831917495428, 'f1': 0.3515454037865181, 'auc': 0.891549371307889}
+2024-09-24 07:37:27,893 - INFO - Test scores for Gradient Boosting: {'accuracy': 0.949090539579311, 'precision': 0.5780445969125214, 'recall': 0.25083736509117976, 'f1': 0.3498572540877239, 'auc': 0.8885629275599811}
+2024-09-24 07:37:28,712 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.97     46518
+           1       0.58      0.25      0.35      2687
+
+    accuracy                           0.95     49205
+   macro avg       0.77      0.62      0.66     49205
+weighted avg       0.94      0.95      0.94     49205
+
+2024-09-24 07:54:52,128 - INFO - Saved model: K-Nearest Neighbors
+2024-09-24 07:54:52,128 - INFO - Best parameters for K-Nearest Neighbors: {'algorithm': 'auto', 'leaf_size': 30, 'metric': 'minkowski', 'metric_params': None, 'n_jobs': None, 'n_neighbors': 5, 'p': 2, 'weights': 'uniform'}
+2024-09-24 07:54:52,128 - INFO - Cross-validation scores for K-Nearest Neighbors: {'accuracy': 0.9444153690659615, 'precision': 0.48108109020555523, 'recall': 0.22804194487430607, 'f1': 0.3094001464644351, 'auc': 0.7577761387084887}
+2024-09-24 07:54:52,128 - INFO - Test scores for K-Nearest Neighbors: {'accuracy': 0.9438268468651559, 'precision': 0.469224620303757, 'recall': 0.21845924823222926, 'f1': 0.298120873539868, 'auc': 0.7551642254188698}
+2024-09-24 07:55:45,773 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.97     46518
+           1       0.47      0.22      0.30      2687
+
+    accuracy                           0.94     49205
+   macro avg       0.71      0.60      0.63     49205
+weighted avg       0.93      0.94      0.93     49205
+
+2024-09-24 07:56:43,335 - INFO - Saved model: XGBoost
+2024-09-24 07:56:43,336 - INFO - Best parameters for XGBoost: {'objective': 'binary:logistic', 'base_score': None, 'booster': None, 'callbacks': None, 'colsample_bylevel': None, 'colsample_bynode': None, 'colsample_bytree': None, 'device': None, 'early_stopping_rounds': None, 'enable_categorical': False, 'eval_metric': 'logloss', 'feature_types': None, 'gamma': None, 'grow_policy': None, 'importance_type': None, 'interaction_constraints': None, 'learning_rate': 0.01, 'max_bin': None, 'max_cat_threshold': None, 'max_cat_to_onehot': None, 'max_delta_step': None, 'max_depth': 3, 'max_leaves': None, 'min_child_weight': None, 'missing': nan, 'monotone_constraints': None, 'multi_strategy': None, 'n_estimators': 100, 'n_jobs': None, 'num_parallel_tree': None, 'random_state': None, 'reg_alpha': None, 'reg_lambda': None, 'sampling_method': None, 'scale_pos_weight': 17.3119650167473, 'subsample': None, 'tree_method': None, 'validate_parameters': None, 'verbosity': None}
+2024-09-24 07:56:43,336 - INFO - Cross-validation scores for XGBoost: {'accuracy': 0.8778510114803735, 'precision': 0.25943485365702557, 'recall': 0.666637246096075, 'f1': 0.3734814010316428, 'auc': 0.8729536006524853}
+2024-09-24 07:56:43,336 - INFO - Test scores for XGBoost: {'accuracy': 0.8782644040239813, 'precision': 0.25936179513332364, 'recall': 0.6624488276888724, 'f1': 0.37277486910994767, 'auc': 0.8715572490573257}
+2024-09-24 07:56:43,972 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.89      0.93     46518
+           1       0.26      0.66      0.37      2687
+
+    accuracy                           0.88     49205
+   macro avg       0.62      0.78      0.65     49205
+weighted avg       0.94      0.88      0.90     49205
+
+2024-09-24 07:56:43,973 - INFO - 
+Model Performance Comparison:
+2024-09-24 07:56:43,978 - INFO - 
+              Model    CV F1  Test AUC  Test Accuracy  Test Precision  Test Recall  Test F1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Best Parameters
+Logistic Regression 0.332171  0.882284       0.833330        0.212872     0.760700 0.332655                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {'C': 0.1, 'class_weight': {0: 0.5288817589173909, 1: 9.15598250837365}, 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 5000, 'multi_class': 'auto', 'n_jobs': None, 'penalty': 'l2', 'random_state': None, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}
+      Decision Tree 0.304882  0.704084       0.863103        0.207653     0.535169 0.299209                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     {'ccp_alpha': 0.0, 'class_weight': {0: 0.5288817589173909, 1: 9.15598250837365}, 'criterion': 'gini', 'max_depth': 20, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'random_state': None, 'splitter': 'best'}
+      Random Forest 0.462143  0.879214       0.940799        0.458879     0.469297 0.464029                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': {0: 0.5288817589173909, 1: 9.15598250837365}, 'criterion': 'gini', 'max_depth': 20, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 10, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+  Gradient Boosting 0.351545  0.888563       0.949091        0.578045     0.250837 0.349857                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         {'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.1, 'loss': 'log_loss', 'max_depth': 3, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 200, 'n_iter_no_change': None, 'random_state': None, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+K-Nearest Neighbors 0.309400  0.755164       0.943827        0.469225     0.218459 0.298121                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             {'algorithm': 'auto', 'leaf_size': 30, 'metric': 'minkowski', 'metric_params': None, 'n_jobs': None, 'n_neighbors': 5, 'p': 2, 'weights': 'uniform'}
+            XGBoost 0.373481  0.871557       0.878264        0.259362     0.662449 0.372775 {'objective': 'binary:logistic', 'base_score': None, 'booster': None, 'callbacks': None, 'colsample_bylevel': None, 'colsample_bynode': None, 'colsample_bytree': None, 'device': None, 'early_stopping_rounds': None, 'enable_categorical': False, 'eval_metric': 'logloss', 'feature_types': None, 'gamma': None, 'grow_policy': None, 'importance_type': None, 'interaction_constraints': None, 'learning_rate': 0.01, 'max_bin': None, 'max_cat_threshold': None, 'max_cat_to_onehot': None, 'max_delta_step': None, 'max_depth': 3, 'max_leaves': None, 'min_child_weight': None, 'missing': nan, 'monotone_constraints': None, 'multi_strategy': None, 'n_estimators': 100, 'n_jobs': None, 'num_parallel_tree': None, 'random_state': None, 'reg_alpha': None, 'reg_lambda': None, 'sampling_method': None, 'scale_pos_weight': 17.3119650167473, 'subsample': None, 'tree_method': None, 'validate_parameters': None, 'verbosity': None}

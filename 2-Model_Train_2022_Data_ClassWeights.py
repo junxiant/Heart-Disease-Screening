@@ -36,7 +36,7 @@ print("GPU?", torch.device("cuda" if torch.cuda.is_available() else "cpu"))
 logging.basicConfig(level=logging.INFO, 
                     format='%(asctime)s - %(levelname)s - %(message)s',
                     handlers=[
-                        logging.FileHandler("./logs/2020_Data_Train_ClassWeights.log"),
+                        logging.FileHandler("./logs/2022_Data_Train_ClassWeights.log"),
                         logging.StreamHandler()
                     ])
 
@@ -44,13 +44,20 @@ logging.basicConfig(level=logging.INFO,
 data_path = '../data'
 df_2022 = pd.read_csv(f"{data_path}/2022/heart_2022_no_nans.csv")
 
+saved_dir = './saved_models_2022_classweights'
+saved_figs = './figs_2022_classweights/'
+if not os.path.exists(saved_dir):
+    os.makedirs(saved_dir)
+if not os.path.exists(saved_figs):
+    os.makedirs(saved_figs)
+    
 # Convert categorical to numeric
 le = LabelEncoder()
 for column in df_2022.select_dtypes(include=['object']).columns:
     df_2022[column] = le.fit_transform(df_2022[column])
 
-X = df_2022.drop('HeartDisease', axis=1)
-y = df_2022['HeartDisease']
+X = df_2022.drop('HadHeartAttack', axis=1)
+y = df_2022['HadHeartAttack']
 
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=seed, stratify=y)
@@ -69,16 +76,16 @@ class_weights = calculate_class_weights(y_train)
 logging.info(f"Calculated class weights: {class_weights}")
 
 # PyTorch Dataset
-class HeartDiseaseDataset(Dataset):
-    def __init__(self, X, y):
-        self.X = torch.tensor(X, dtype=torch.float32)
-        self.y = torch.tensor(y, dtype=torch.float32)
+# class HeartDiseaseDataset(Dataset):
+#     def __init__(self, X, y):
+#         self.X = torch.tensor(X, dtype=torch.float32)
+#         self.y = torch.tensor(y, dtype=torch.float32)
 
-    def __len__(self):
-        return len(self.y)
+#     def __len__(self):
+#         return len(self.y)
 
-    def __getitem__(self, idx):
-        return self.X[idx], self.y[idx]
+#     def __getitem__(self, idx):
+#         return self.X[idx], self.y[idx]
 
 # # PyTorch Neural Network
 # class NeuralNetwork(nn.Module):
@@ -184,7 +191,7 @@ def get_model_performance(model, param_grid, X_train, X_test, y_train, y_test):
     return cv_scores, test_scores, best_model
 
 
-def save_model(model, name, save_dir='./saved_models'):
+def save_model(model, name, save_dir=f'{saved_dir}'):
     os.makedirs(save_dir, exist_ok=True)
     # if isinstance(model, PyTorchClassifier):
     #     torch.save(model.model.state_dict(), os.path.join(save_dir, f"{name}_pytorch.pth"))
@@ -205,7 +212,7 @@ def model_evaluation(classifier, x_test, y_test):
     plt.figure(figsize=(10, 7))
     sns.heatmap(cm, annot=labels, cmap='Greens', fmt='')
     plt.title(f'Confusion Matrix')
-    plt.savefig(f'./figs_2020_classweights/confusion_matrix_{str(classifier.__class__.__name__)}.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'{saved_figs}/confusion_matrix_{str(classifier.__class__.__name__)}.png', dpi=300, bbox_inches='tight')
 
     report = classification_report(y_test, classifier.predict(x_test))
     logging.info(f"Classification Report:\n{report}")
