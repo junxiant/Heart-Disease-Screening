@@ -1,0 +1,52 @@
+2024-09-29 01:14:57,691 - INFO - X Train: (255836, 17)
+2024-09-29 01:14:57,691 - INFO - X Test: (63959, 17)
+2024-09-29 01:14:57,691 - INFO - y Train: (255836,)
+2024-09-29 01:14:57,691 - INFO - y Test: (63959,)
+2024-09-29 01:14:57,718 - INFO - Train set distribution:
+2024-09-29 01:14:57,718 - INFO - Class 0: 233938 (91.44%)
+2024-09-29 01:14:57,718 - INFO - Class 1: 21898 (8.56%)
+2024-09-29 01:14:57,718 - INFO - 
+Test set distribution:
+2024-09-29 01:14:57,718 - INFO - Class 0: 58484 (91.44%)
+2024-09-29 01:14:57,718 - INFO - Class 1: 5475 (8.56%)
+2024-09-29 01:14:57,718 - INFO - 
+Total samples in train set: 255836
+2024-09-29 01:14:57,719 - INFO - Total samples in test set: 63959
+2024-09-29 01:14:58,017 - INFO - Ranked features by correlation with target with Corr:
+2024-09-29 01:14:58,017 - INFO - AgeCategory         0.233662
+DiffWalking         0.201706
+Stroke              0.195063
+Diabetic            0.170026
+PhysicalHealth      0.169937
+KidneyDisease       0.148845
+Smoking             0.107217
+PhysicalActivity    0.099322
+SkinCancer          0.091689
+Sex                 0.071108
+BMI                 0.053454
+Asthma              0.040918
+Race                0.034935
+AlcoholDrinking     0.031414
+MentalHealth        0.027199
+GenHealth           0.011581
+SleepTime           0.008847
+dtype: float64
+2024-09-29 01:15:25,326 - INFO - Ranked important features:
+2024-09-29 01:15:25,326 - INFO - BMI                 0.352553
+SleepTime           0.106507
+AgeCategory         0.102026
+PhysicalHealth      0.074321
+MentalHealth        0.066511
+GenHealth           0.056777
+Race                0.035945
+Diabetic            0.028010
+Stroke              0.026949
+DiffWalking         0.025259
+PhysicalActivity    0.024980
+Asthma              0.020182
+Sex                 0.020180
+Smoking             0.017805
+SkinCancer          0.017533
+KidneyDisease       0.014888
+AlcoholDrinking     0.009575
+dtype: float64

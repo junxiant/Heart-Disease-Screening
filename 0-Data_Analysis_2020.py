@@ -9,14 +9,15 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from collections import Counter
 
-
-seed = 42
+# Configure logging
 logging.basicConfig(level=logging.INFO, 
                     format='%(asctime)s - %(levelname)s - %(message)s',
                     handlers=[
-                        logging.FileHandler("CSML_2020_Data_Train.log"),
+                        logging.FileHandler("./figs/2020_Data_Analysis.log"),
                         logging.StreamHandler()
                     ])
+
+seed = 42
 
 data_path = '../data'
 
@@ -33,7 +34,7 @@ plt.xlabel('HeartDisease')
 plt.ylabel('Count')
 plt.ticklabel_format(style='plain', axis='y')
 # plt.show()
-plt.savefig('./figs/Heart_Disease_Data_Distribution_Before_Split.png')
+plt.savefig('./figs/2020_Heart_Disease_Data_Distribution_Before_Split.png')
 
 # Analyze categorial column
 categorical_vars = ['Smoking', 'AlcoholDrinking', 'Stroke', 'Diabetic']
@@ -49,7 +50,7 @@ for i, var in enumerate(categorical_vars):
     
 plt.tight_layout()
 # plt.show()
-plt.savefig('./figs/Categorical_Analysis.png')
+plt.savefig('./figs/2020_Categorical_Analysis.png')
 
 # Analyze Age column
 plt.figure(figsize=(12, 6))
@@ -59,7 +60,7 @@ plt.xlabel('Age Category')
 plt.ylabel('Count')
 plt.xticks(rotation=45)
 # plt.show()
-plt.savefig('./figs/Age_Analysis.png')
+plt.savefig('./figs/2020_Age_Analysis.png')
 
 # Analyze BMI
 plt.figure(figsize=(10, 6))
@@ -68,7 +69,7 @@ plt.title('BMI Distribution')
 plt.xlabel('BMI')
 plt.ylabel('Count')
 # plt.show()
-plt.savefig('./figs/BMI_Analysis.png')
+plt.savefig('./figs/2020_BMI_Analysis.png')
 
 # 2. Feature importance analysis
 
@@ -83,28 +84,28 @@ y = df_2020['HeartDisease']
 # Split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=seed, stratify=y)
 
-print("X Train", X_train.shape)
-print("X Test", X_test.shape)
-print("y rain", y_train.shape)
-print("y test", y_test.shape)
+logging.info(f"X Train: {X_train.shape}")
+logging.info(f"X Test: {X_test.shape}")
+logging.info(f"y Train: {y_train.shape}")
+logging.info(f"y Test: {y_test.shape}")
 
 # After splitting
 # Distribution after split
 train_distribution = Counter(y_train)
 test_distribution = Counter(y_test)
 
-print("Train set distribution:")
+logging.info(f"Train set distribution:")
 for label, count in train_distribution.items():
     percentage = count / len(y_train) * 100
-    print(f"Class {label}: {count} ({percentage:.2f}%)")
+    logging.info(f"Class {label}: {count} ({percentage:.2f}%)")
 
-print("\nTest set distribution:")
+logging.info("\nTest set distribution:")
 for label, count in test_distribution.items():
     percentage = count / len(y_test) * 100
-    print(f"Class {label}: {count} ({percentage:.2f}%)")
+    logging.info(f"Class {label}: {count} ({percentage:.2f}%)")
 
-print(f"\nTotal samples in train set: {len(y_train)}")
-print(f"Total samples in test set: {len(y_test)}")
+logging.info(f"\nTotal samples in train set: {len(y_train)}")
+logging.info(f"Total samples in test set: {len(y_test)}")
 
 # Correlation matrix
 # Combine first
@@ -122,10 +123,10 @@ plt.xlabel('Features')
 plt.ylabel('Absolute Correlation')
 plt.tight_layout()
 # plt.show()
-plt.savefig('./figs/Correlation_Bar.png')
+plt.savefig('./figs/2020_Correlation_Bar.png')
 
-print("Ranked features by correlation with target:")
-print(correlation_with_target)
+logging.info("Ranked features by correlation with target with Corr:")
+logging.info(correlation_with_target)
 
 # Correlation heatmap including the target variable
 plt.figure(figsize=(16, 14))
@@ -134,8 +135,7 @@ sns.heatmap(cor, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
 plt.title("Correlation Heatmap of Features (including Heart Disease)")
 plt.tight_layout()
 # plt.show()
-plt.savefig('./figs/Correlation_Matrix_Heatmap.png')
-
+plt.savefig('./figs/2020_Correlation_Matrix_Heatmap.png')
 
 # Using RF classifier first
 rf_model = RandomForestClassifier(n_estimators=100, random_state=seed)
@@ -147,12 +147,12 @@ feature_importances = pd.Series(importances, index=X.columns).sort_values(ascend
 
 plt.figure(figsize=(12, 8))
 feature_importances.plot(kind='bar')
-plt.title('Feature Importances for Heart Disease Prediction')
+plt.title('Feature Importances for Heart Disease Prediction with RF')
 plt.xlabel('Features')
 plt.ylabel('Importance')
 plt.tight_layout()
 # plt.show()
-plt.savefig('./figs/Feature_Importance_RF.png')
+plt.savefig('./figs/2020_Feature_Importance_RF.png')
 
-print("Ranked important features:")
-print(feature_importances)
+logging.info("Ranked important features:")
+logging.info(feature_importances)

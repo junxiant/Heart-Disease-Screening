@@ -1,0 +1,96 @@
+2024-09-29 01:28:05,844 - INFO - X Train: (196817, 39)
+2024-09-29 01:28:05,844 - INFO - X Test: (49205, 39)
+2024-09-29 01:28:05,844 - INFO - y Train: (196817,)
+2024-09-29 01:28:05,844 - INFO - y Test: (49205,)
+2024-09-29 01:28:05,864 - INFO - Train set distribution:
+2024-09-29 01:28:05,864 - INFO - Class 0: 186069 (94.54%)
+2024-09-29 01:28:05,864 - INFO - Class 1: 10748 (5.46%)
+2024-09-29 01:28:05,864 - INFO - 
+Test set distribution:
+2024-09-29 01:28:05,864 - INFO - Class 1: 2687 (5.46%)
+2024-09-29 01:28:05,864 - INFO - Class 0: 46518 (94.54%)
+2024-09-29 01:28:05,864 - INFO - 
+Total samples in train set: 196817
+2024-09-29 01:28:05,864 - INFO - Total samples in test set: 49205
+2024-09-29 01:28:06,251 - INFO - Ranked features by correlation with target with Corr:
+2024-09-29 01:28:06,251 - INFO - HadAngina                    0.447238
+HadStroke                    0.179254
+AgeCategory                  0.172418
+ChestScan                    0.166200
+DifficultyWalking            0.159460
+HadDiabetes                  0.136534
+HadCOPD                      0.133838
+PhysicalHealthDays           0.132673
+PneumoVaxEver                0.120393
+HadArthritis                 0.116537
+HadKidneyDisease             0.109276
+DeafOrHardOfHearing          0.097516
+DifficultyErrands            0.091154
+DifficultyDressingBathing    0.084407
+PhysicalActivities           0.083913
+SmokerStatus                 0.078082
+AlcoholDrinkers              0.075665
+Sex                          0.074147
+RemovedTeeth                 0.073579
+BlindOrVisionDifficulty      0.072761
+LastCheckupTime              0.065244
+DifficultyConcentrating      0.053143
+HadSkinCancer                0.050024
+FluVaxLast12                 0.046747
+WeightInKilograms            0.038267
+BMI                          0.029947
+MentalHealthDays             0.025177
+HadDepressiveDisorder        0.024116
+HeightInMeters               0.023583
+HadAsthma                    0.023387
+RaceEthnicityCategory        0.022745
+CovidPos                     0.021809
+GeneralHealth                0.021606
+HighRiskLastYear             0.020757
+ECigaretteUsage              0.014411
+HIVTesting                   0.013961
+TetanusLast10Tdap            0.009234
+State                        0.004237
+SleepHours                   0.003910
+dtype: float64
+2024-09-29 01:28:34,857 - INFO - Ranked important features:
+2024-09-29 01:28:34,857 - INFO - HadAngina                    0.158377
+BMI                          0.082355
+WeightInKilograms            0.073114
+State                        0.072477
+HeightInMeters               0.057138
+AgeCategory                  0.046666
+SleepHours                   0.044542
+PhysicalHealthDays           0.035782
+TetanusLast10Tdap            0.029440
+GeneralHealth                0.028566
+MentalHealthDays             0.027631
+RemovedTeeth                 0.025868
+SmokerStatus                 0.022062
+HadStroke                    0.019920
+RaceEthnicityCategory        0.016443
+HadDiabetes                  0.016250
+ChestScan                    0.014616
+CovidPos                     0.014569
+ECigaretteUsage              0.014161
+FluVaxLast12                 0.013849
+AlcoholDrinkers              0.013279
+HadArthritis                 0.013174
+PhysicalActivities           0.012554
+HIVTesting                   0.012238
+PneumoVaxEver                0.012021
+DifficultyWalking            0.011934
+Sex                          0.011618
+HadCOPD                      0.010332
+HadAsthma                    0.010117
+HadDepressiveDisorder        0.010101
+DeafOrHardOfHearing          0.009988
+HadSkinCancer                0.009976
+HadKidneyDisease             0.008833
+LastCheckupTime              0.008820
+DifficultyConcentrating      0.008395
+BlindOrVisionDifficulty      0.007450
+DifficultyErrands            0.006845
+DifficultyDressingBathing    0.005308
+HighRiskLastYear             0.003193
+dtype: float64
