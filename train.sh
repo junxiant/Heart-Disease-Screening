@@ -7,3 +7,7 @@ python 1-Model_Train_2020_Data_NoClassWeights.py
 python 2-Model_Train_2022_Data_ClassWeights.py
 
 python 2-Model_Train_2022_Data_NoClassWeights.py
+
+python 3-Model_Train_UCI_Data_ClassWeights.py
+
+python 3-Model_Train_UCI_Data_NoClassWeights.py

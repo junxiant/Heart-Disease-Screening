@@ -64,7 +64,6 @@ print("Missing data vals", df_2022.isnull().sum()[df_2022.isnull().sum()>0].sort
 
 # df_2022 = df_2022.dropna()
 # print("After dropping NAN", df_2022.shape)
-df_2022.drop(columns=['id','dataset'], inplace=True)
 
 # Convert target labels to binary classification
 df_2022['num'] = df_2022['num'].replace({0: 0, 1: 1, 2: 1, 3: 1, 4: 1})
@@ -190,7 +189,6 @@ classifiers = {
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
-joblib.dump(scaler, './saved_models_uci_classweights/scaler.joblib')
 
 # Perform model training and evaluation
 results = []
