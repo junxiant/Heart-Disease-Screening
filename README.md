@@ -1,38 +1,35 @@
-# Medical Report Explainer
+# Heart Disease Screening
 
-An LLM-powered patient empowerment application that translates complex diagnostic imaging reports, pathology results, and laboratory summaries into plain, empathetic, and easily understandable language.
+An artificial intelligence and Large Language Model-driven clinical screening application for cardiovascular risk stratification and patient record assessment.
 
 ---
 
 ## Overview
 
-Medical reports are filled with dense clinical jargon that causes patient anxiety and confusion. **Medical Report Explainer** parses technical diagnostic documents (e.g., radiology reports, blood work panels) and generates clear, structured layman explanations, vocabulary breakdowns, and recommended follow-up questions for patients to ask their physicians.
+Cardiovascular diseases are the leading cause of mortality globally. This application integrates classical supervised machine learning for structured physiological risk indicators (blood pressure, cholesterol, ECG features) with LLMs to interpret unstructured patient clinical notes and summarize cardiovascular risk profiles for healthcare providers.
 
-## Key Features
+## Key Capabilities
 
-- **Jargon Translation Engine**: Converts complex clinical terminology into accessible reading levels without losing clinical meaning.
-- **Structured Explanations**: Produces a structured summary: Key Findings, What This Means, Glossary of Terms, Questions for Your Doctor.
-- **Safety & Disclaimer Guardrails**: Enforces clear non-diagnostic disclaimers and safety guidance encouraging physician consultation.
+- Tabular Risk Modeling: Ensembles (XGBoost, LightGBM, Random Forests) trained on clinical biomarker data.
+- Clinical Text Interpretation: LLM prompt pipelines parsing unstructured discharge summaries and symptoms.
+- Risk Score Generation: Actionable stratification categorization with interpretable feature attributions (SHAP values).
 
 ## Tech Stack
 
-- **LLM Pipeline**: Python / LangChain / OpenAI API (GPT-4 / GPT-3.5) / Anthropic Claude
-- **Document Ingestion**: PyPDF2 / pdfplumber / Tesseract OCR
-- **Web Interface**: Streamlit / React frontend
+- ML Frameworks: Scikit-Learn, XGBoost, LightGBM, SHAP
+- LLM / NLP: LangChain, OpenAI API, Hugging Face Transformers
+- Backend / UI: Python, Flask, Streamlit
 
-## Installation & Setup
+## Setup & Running
 
 ```bash
-git clone https://github.com/junxiant/Med-Report-Explainer.git
-cd Med-Report-Explainer
+git clone https://github.com/junxiant/Heart-Disease-Screening.git
+cd Heart-Disease-Screening
 
 pip install -r requirements.txt
 
-# Set up API Key
-export OPENAI_API_KEY="your-api-key"
-
-# Run application
-python app.py
+# Launch application
+streamlit run app.py
 ```
 
 Author Jun Tan
